@@ -28,24 +28,11 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nickname | string | null: false |
-| password | string | null: false |
-| e-mail   | string | null: false |
-
-### Association
-
-- has_many :items
-- has_many :coments
-- has_one  :profile
-- has_one  :credit_card
-- has_one  :shipping_addrese
-
-## profiles
-
 | Column          | Type      | Options                        |
 | --------------- | --------- | ------------------------------ |
+| nickname        | string    | null: false                    |
+| password        | string    | null: false                    |
+| e-mail          | string    | null: false                    |
 | user_id         | reference | null: false, foreign_key: true |
 | last_name       | string    | null: false                    |
 | first_name      | string    | null: false                    |
@@ -57,25 +44,15 @@ Things you may want to cover:
 
 ### Association
 
+- has_many :items
+- has_many :coments
+- has_one  :profile
+- has_one  :shipping_addrese
 - belongs_to :users
 - belongs_to_active_hash :birth_year
 - belongs_to_active_hash :birth_month
 - belongs_to_active_hash :birth_day
 
-## credit_carda テーブル
-
-| Column           | Type      | Options                        |
-| ---------------- | --------- | ------------------------------ |
-| user_id          | reference | null: false, foreign_key: true |
-| card_number      | integer   | null: false                    |
-| expiration_year  | integer   | null: false                    |
-| expiration_month | integer   | null: false                    |
-| security_cord    | integer   | null: false                    |
-
-### Association
-
-- belongs_to :user
-- belongs_to_active_hash :addrese
 
 ## shipping_addrese テーブル
 
@@ -110,7 +87,6 @@ Things you may want to cover:
 ### Association
 
 - has_many :coments
-- has_one  :item_images
 - belongs_to :users
 - belongs_to_active_hash :categorys
 - belongs_to_active_hash :status
@@ -131,15 +107,3 @@ Things you may want to cover:
 
 - belongs_to :users
 - belongs_to :items
-
-## item_images テーブル
-
-| Column   | Type      | Options                       |
-| -------- | --------- | ----------------------------- |
-| items_id | reference | null: false, foreign_key:true |
-| url      | string    | null: false                   |
-
-### Association
-
-- belong_to :items
-
