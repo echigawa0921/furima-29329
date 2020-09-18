@@ -43,8 +43,7 @@ Things you may want to cover:
 
 - has_many :items
 - has_many :coments
-- has_one  :profile
-- has_one  :shipping_addrese
+
 
 
 
@@ -53,16 +52,17 @@ Things you may want to cover:
 | Column           | Type      | Options                        |
 | ---------------- | --------- | ------------------------------ |
 | user             | reference | null: false, foreign_key: true |
-| post_cord        | integer   | null: false                    |
-| prefecture_id    | reference | null: false, foreign_key: true |
+| post_cord        | string    | null: false                    |
+| prefecture_id    | integer   | null: false                    |
 | municipality     | string    | null: false                    |
 | addrese          | string    | null: false                    |
 | building_name    | string    | -                              |
-| phone_number     | integer   | null:false                     |
+| phone_number     | string    | null:false                     |
 
 ### Association
 
-- belongs_to :user
+- belongs_to :transation
+- belongs_to_active_hash :prefectures
 
 ## items テーブル
 
@@ -81,7 +81,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :coments
-- belongs_to :users
+- belongs_to :user
 - belongs_to_active_hash :categorys
 - belongs_to_active_hash :status
 - belongs_to_active_hash :delivery_fees
@@ -99,18 +99,21 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
 
 ## transation
 
-| Column  | Type      | Options                       |
-| ------- | --------- | ----------------------------- |
-| user    | reference | null: false, foreign_key:true |
-| item    | reference | null: false, foreign_key:true |
+| Column           | Type      | Options                       |
+| ---------------- | --------- | ----------------------------- |
+| user             | reference | null: false, foreign_key:true |
+| item             | reference | null: false, foreign_key:true |
+| shipping_addrese | reference | null: false, foreign_key:true |
 
 ### Association
 
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
+- has_one :shipping_adderese
+
 
