@@ -32,15 +32,12 @@ Things you may want to cover:
 | --------------- | --------- | ------------------------------ |
 | nickname        | string    | null: false                    |
 | password        | string    | null: false                    |
-| e-mail          | string    | null: false                    |
-| user_id         | reference | null: false, foreign_key: true |
+| email           | string    | null: false                    |
 | last_name       | string    | null: false                    |
 | first_name      | string    | null: false                    |
 | last_name_kana  | string    | null: false                    |
 | first_name_kana | string    | null: false                    |
-| birth_year_id   | reference | null: false, foreign_key: true |
-| birth_month_id  | reference | null: false, foreign_key: true |
-| birth_day_id    | reference | null: false, foreign_key: true |
+| birthday        | date      | null: false                    |
 
 ### Association
 
@@ -48,17 +45,14 @@ Things you may want to cover:
 - has_many :coments
 - has_one  :profile
 - has_one  :shipping_addrese
-- belongs_to :users
-- belongs_to_active_hash :birth_year
-- belongs_to_active_hash :birth_month
-- belongs_to_active_hash :birth_day
+
 
 
 ## shipping_addrese テーブル
 
 | Column           | Type      | Options                        |
 | ---------------- | --------- | ------------------------------ |
-| user_id          | reference | null: false, foreign_key: true |
+| user             | reference | null: false, foreign_key: true |
 | post_cord        | integer   | null: false                    |
 | prefecture_id    | reference | null: false, foreign_key: true |
 | municipality     | string    | null: false                    |
@@ -74,14 +68,14 @@ Things you may want to cover:
 
 | Column             | Type      | Options                        |
 | ------------------ | --------- | ------------------------------ |
-| user_id            | reference | null: false, foreign_key: true |
+| user               | reference | null: false, foreign_key: true |
 | product_name       | string    | null: false                    |
 | introduction       | text      | null: false                    |
-| category_id        | reference | null: false, foreign_key: true |
-| status_id          | reference | null: false, foreign_key: true |
-| delivery_fee_id    | reference | null: false, foreign_key: true |
-| shipment_source_id | reference | null: false, foreign_key: true |
-| shippibg_day_id    | reference | null: false, foreign_key: true |
+| category_id        | integer   | null: false                    |
+| status_id          | integer   | null: false                    |
+| delivery_fee_id    | integer   | null: false                    |
+| shipment_source_id | integer   | null: false                    |
+| shippibg_day_id    | integer   | null: false                    |
 | price              | integer   | null: false                    |
 
 ### Association
@@ -98,10 +92,22 @@ Things you may want to cover:
 
 | Column  | Type      | Options                       |
 | ------- | --------- | ----------------------------- |
-| user_id | reference | null: false, foreign_key:true |
-| item_id | reference | null: false, foreign_key:true |
+| user    | reference | null: false, foreign_key:true |
+| item    | reference | null: false, foreign_key:true |
 | coment  | text      | null: false                   |
 
+
+### Association
+
+- belongs_to :users
+- belongs_to :items
+
+## transation
+
+| Column  | Type      | Options                       |
+| ------- | --------- | ----------------------------- |
+| user    | reference | null: false, foreign_key:true |
+| item    | reference | null: false, foreign_key:true |
 
 ### Association
 
