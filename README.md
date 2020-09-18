@@ -43,7 +43,7 @@ Things you may want to cover:
 
 - has_many :items
 - has_many :coments
-- has_one :item_purchase
+- has_many :item_purchase
 
 
 
