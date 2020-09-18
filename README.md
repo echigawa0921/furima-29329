@@ -43,15 +43,15 @@ Things you may want to cover:
 
 - has_many :items
 - has_many :coments
+- has_one :item_purchase
 
 
 
-
-## shipping_addrese テーブル
+## shipping_addreses テーブル
 
 | Column           | Type      | Options                        |
 | ---------------- | --------- | ------------------------------ |
-| user             | reference | null: false, foreign_key: true |
+| item_purchase    | reference | null: false, foreign_key: true |
 | post_cord        | string    | null: false                    |
 | prefecture_id    | integer   | null: false                    |
 | municipality     | string    | null: false                    |
@@ -61,7 +61,7 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :transation
+- belongs_to :item_purchase
 - belongs_to_active_hash :prefectures
 
 ## items テーブル
@@ -82,6 +82,7 @@ Things you may want to cover:
 
 - has_many :coments
 - belongs_to :user
+- has_one :item_purchase
 - belongs_to_active_hash :categorys
 - belongs_to_active_hash :status
 - belongs_to_active_hash :delivery_fees
@@ -102,13 +103,12 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :item
 
-## transation
+## item_purchases
 
 | Column           | Type      | Options                       |
 | ---------------- | --------- | ----------------------------- |
 | user             | reference | null: false, foreign_key:true |
 | item             | reference | null: false, foreign_key:true |
-| shipping_addrese | reference | null: false, foreign_key:true |
 
 ### Association
 
