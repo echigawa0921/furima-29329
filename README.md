@@ -43,11 +43,11 @@ Things you may want to cover:
 
 - has_many :items
 - has_many :coments
-- has_many :item_purchase
+- has_many :item_purchases
 
 
 
-## shipping_addreses テーブル
+## shipping_addresses テーブル
 
 | Column           | Type      | Options                        |
 | ---------------- | --------- | ------------------------------ |
@@ -114,6 +114,6 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
-- has_one :shipping_adderese
+- has_one :shipping_adderess
 
 
