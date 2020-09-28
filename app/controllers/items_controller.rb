@@ -18,11 +18,21 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit  
+  def edit
+    @item = Item.find(params[:id])  
   end
 
   def show
     @item = Item.find(params[:id])  
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      redirect_to controller: :items, action: :index
+    else
+      render "edit"
+    end
   end
 
   private
