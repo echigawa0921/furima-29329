@@ -4,7 +4,7 @@ class UserItemPurchase
   attr_accessor :user_id, :item_id, :postal_cord, :prefecture_id, :municipality, :address, :building_name, :phone_number,:token
 
   with_options presence: true do
-    validates :postal_cord, :prefecture_id, :municipality, :address, :phone_number
+    validates :postal_cord, :prefecture_id, :municipality, :address, :phone_number, :token
     validates :postal_cord, format: {with: /\A[0-9]{3}-[0-9]{4}\z/ }
     validates :phone_number, format: {with: /\A\d{10}$|^\d{11}\z/ }
     validates :prefecture_id, numericality: { other_than: 1 }
