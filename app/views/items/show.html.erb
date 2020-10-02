@@ -32,7 +32,7 @@
     <%= link_to '削除', item_path(@item), method: :delete, class:'item-destroy' %>
     <% else %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
-    <% if @item.item_purchase == nil %>
+    <% if user_signed_in? && current_user.id != @item.user_id && @item.item_purchase == nil %>
     <%= link_to '購入画面に進む', item_item_purchases_path(@item),method: :get, class:"item-red-btn"%>
     <% end %>
     <% end %>
