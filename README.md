@@ -95,7 +95,7 @@ Things you may want to cover:
 | ------- | --------- | ----------------------------- |
 | user    | reference | null: false, foreign_key:true |
 | item    | reference | null: false, foreign_key:true |
-| coment  | text      | null: false                   |
+| comment | text      | null: false                   |
 
 
 ### Association
