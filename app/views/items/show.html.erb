@@ -82,18 +82,18 @@
         <span>不適切な商品の通報</span>
       </div>
     </div>
+    <table class="comment" id='comment'>
+      <tbody>
+        <% @comments.reverse_each do |comment| %>
+        <tr>
+          <th class="comment-usernickname"><%=comment.user.nickname%></th>
+          <td class="comment-list"><%= comment.comment %></td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <%# /商品の概要 %>
-<table class="comment" id='comment'>
-  <tbody>
-    <% @comments.reverse_each do |comment| %>
-      <tr>
-        <th class="comment-usernickname"><%=comment.user.nickname%></th>
-        <td class="comment-list"><%= comment.comment %></td>
-      <% end %>
-    </tr>
-  </tbody>
-</table>
 
 <% if user_signed_in?%>
   <div class="comment-box">
