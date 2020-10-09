@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   has_one_attached :image
-  has_one :item_purchase
+  has_one :item_purchase , dependent: :destroy
   has_many :comments, dependent: :destroy
   belongs_to_active_hash :category
   belongs_to_active_hash :status
