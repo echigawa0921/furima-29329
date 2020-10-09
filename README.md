@@ -23,7 +23,45 @@ Things you may want to cover:
 
 * ...
 
-	
+# FURIMA
+
+# ユーザーが商品の出品・購入を行うことのできるアプリです
+
+<https://furima-29329.herokuapp.com/>
+
+# Basic認証
+* ID admin
+* pass 2222
+
+# 購入者アカウント
+* email sample@sample.com
+* pass sample1
+* card 4242424242424242
+* 利用期限 3/24
+* セキュリティコード 123
+
+# 出品者アカウント
+* email sample2@sample.com
+* pass sample2
+
+# 利用方法
+* トップの新規登録ボタンからユーザー登録をします
+* 出品ボタンから商品の出品ができます
+* 購入したい商品をクリックし購入画面で購入ができます
+
+# 目指した課題解決
+* 商品購入者が、商品について気になる点を気軽に質問できるようにコメント機能を実装しました
+
+# 要件定義
+* ユーザー登録機能 ユーザーが新規登録できる
+* 商品出品機能 ユーザーが商品の出品できる
+* 商品購入機能 ユーザーが商品の購入できる
+* コメント機能 ユーザーが商品にコメントできる
+
+# データベース設計
+<https://drive.google.com/file/d/1z5IGTrPeT3ZSTPs-65ByRGhHV-zDnHC2/view?usp=sharing>
+
+
 # テーブル設計
 
 ## users テーブル
