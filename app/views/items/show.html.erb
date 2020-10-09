@@ -95,6 +95,7 @@
   </tbody>
 </table>
 
+<% if user_signed_in?%>
   <div class="comment-box">
     <%= form_with model: @comment, url: item_comments_path(@item) ,local: true do |f| %>
       <%= f.text_area :comment, class: "comment-text" %>
@@ -107,6 +108,7 @@
         <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
   </div>
   <% end %>
+<% end %>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
